@@ -15,4 +15,18 @@ function ItemList() {
         setItems(newItems);
         console.log(...todos);
     };
+
+    const updateItem = (itemId, newValue) => {
+        if (!newValue.text || /^\s*$/.test(newValue.text)) {
+            return;
+        }
+
+        setItems(prev => prev.map(item => (item.id === todoId ? newValue : item)));
+    };
+
+    const removeItem = id => {
+        const removedArr = [...items].filter(item => item.id !== id);
+
+        setItems(removedArr);
+    };
 }
