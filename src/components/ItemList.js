@@ -6,14 +6,14 @@ function ItemList() {
     const [items, setItems] = useState([]);
 
     const addItem = item => {
-        if (!item.text  || /^\s*$/.test(todo.text)) {
+        if (!item.text  || /^\s*$/.test(item.text)) {
             return;
         }
 
         const newItems = [item, ...items];
 
         setItems(newItems);
-        console.log(...todos);
+        console.log(...items);
     };
 
     const updateItem = (itemId, newValue) => {
@@ -21,7 +21,7 @@ function ItemList() {
             return;
         }
 
-        setItems(prev => prev.map(item => (item.id === todoId ? newValue : item)));
+        setItems(prev => prev.map(item => (item.id === itemId ? newValue : item)));
     };
 
     const removeItem = id => {
@@ -39,4 +39,18 @@ function ItemList() {
         });
         setItems(updatedItems);
     };
+
+    return (
+        <div className='header'>
+         <h1>Hey!What Are We Getting Today?</h1>
+         <ItemForm onSubmit={addItem} />
+         <Item
+           items={items}
+           completeItem={completeItem}
+           removeItem={removeItem}
+           updateItem={updateItem}
+         />
+        </div>
+    );
 }
+ export default ItemList;

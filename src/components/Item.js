@@ -1,5 +1,7 @@
-import { toBeInTheDocument } from '@testing-library/jest-dom/dist/matchers';
 import React, { useState } from 'react';
+import ItemForm from './ItemForm';
+import { RiCloseCircleLine} from 'react-icons/ri';
+import { TiEdit } from 'react-icons/ti';
 
 
 const Item = ({ items, completeItem, removeItem, updateItem }) => {
@@ -38,6 +40,7 @@ const Item = ({ items, completeItem, removeItem, updateItem }) => {
                className = 'edit-icon'
               />
           </div>
+          
         </div>
     ))
 }
