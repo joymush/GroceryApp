@@ -29,4 +29,14 @@ function ItemList() {
 
         setItems(removedArr);
     };
+
+    const completeItem = id => {
+        let updatedItems = items.map(item => {
+            if (item.id === id) {
+                item.isComplete = !item.isComplete;
+            }
+            return item;
+        });
+        setItems(updatedItems);
+    };
 }
