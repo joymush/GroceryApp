@@ -1,3 +1,4 @@
+import { toBeInTheDocument } from '@testing-library/jest-dom/dist/matchers';
 import React, { useState } from 'react';
 
 
@@ -27,6 +28,18 @@ const Item = ({ items, completeItem, removeItem, updateItem }) => {
           <div key={item.id} onClick={() => completeItem(item.id)}>
             {item.text}
           </div>
+          <div className='icons'>
+            <RiCloseCircleLine
+              onClick={() => removeItem(item.id)}
+              className='delete-icon'
+              />
+              <TiEdit
+               onClick={() => setEdit({id: item.id, value: item.text })}
+               className = 'edit-icon'
+              />
+          </div>
         </div>
     ))
 }
+
+export default Item;
