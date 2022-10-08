@@ -30,13 +30,20 @@ function App () {
 
           <Switch>
             <Route path="/about">
-              
+              <About />
+            </Route>
+            <Route path="/itemlist">
+              <ItemList />
+            </Route>
+            <Route path="/">
+              <Home />
             </Route>
           </Switch>
         </div>
       </Router>
     </div>
   );
-
 }
+
+
 export default App;
