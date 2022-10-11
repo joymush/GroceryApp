@@ -7,6 +7,14 @@ function NavBar() {
             <NavLink id="nav_items" to="/">
                 Home
             </NavLink>
+            <NavLink id="nav_items" to="/items">
+                Items
+            </NavLink>
+            <NavLink id="nav_items" to="/itemlist">
+                Add Items
+            </NavLink>
         </div>
-    )
+    );
 }
+
+export default NavBar;
